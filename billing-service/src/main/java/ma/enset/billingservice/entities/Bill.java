@@ -22,4 +22,12 @@ public class Bill {
     @Transient
     private Customer customer;
 
+    public double getTotal(){
+        double sum = 0;
+        for (ProductItem pi:productItems) {
+            sum += pi.getAmount();
+        }
+        return sum;
+    }
+
 }
